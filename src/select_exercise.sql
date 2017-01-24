@@ -16,4 +16,4 @@ SELECT 'Albums less than 20 million certified sales' AS 'Info';
 SELECT name FROM albums WHERE sales < 20000000;
 
 SELECT 'All (only) rock albums' AS 'Info';
-SELECT name FROM albums WHERE genre = 'rock';
+SELECT name content FROM albums WHERE genre = 'rock';
