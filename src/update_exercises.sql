@@ -9,21 +9,21 @@ USE codeup_test_db;
 SELECT 'These are all the albums in the table!';
 # Make all the albums 10 times more popular (sales * 10)
 UPDATE albums
-set sales = sales*10;
+SET sales = (sales*10);
 SELECT * FROM albums;
 
 # All albums released before 1980
 SELECT 'All Albums before 1980';
 # Move all the albums before 1980 back to the 1800s.
 UPDATE albums
-set release_date = "1800"
+SET release_date = "1800"
 WHERE release_date < "1980";
 SELECT * FROM albums;
 
 # All albums by Michael Jackson
 SELECT 'All albums by Michael Jackson';
 # Change "Michael Jackson" to "Peter Jackson"
-Update artist
-set artist = "Peter Jackson"
+Update albums
+SET artist = "Peter Jackson"
 WHERE artist = "Michael Jackson";
 SELECT * FROM albums;
