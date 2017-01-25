@@ -35,8 +35,9 @@ ORDER BY first_name;
 # Add a GROUP BY clause to your query for last names with 'q' and not 'qu' to find the distinct combination of first and last names.
 # You will find there were some duplicate first and last name pairs in your previous results.
 # Add a count() to your results and use ORDER BY to make it easier to find employees whose unusual name is shared with others.
-SELECT CONCAT(COUNT(last_name), ' ', last_name) AS 'Grouped names with Q'
+SELECT CONCAT(first_name, ' ', last_name) AS 'full_name', COUNT(first_name) AS 'number of people with this name'
 FROM employees
 WHERE last_name LIKE '%q%'
-      AND NOT last_name LIKE '%qu%'
-GROUP BY last_name;
+AND last_name NOT LIKE '%qu%'
+GROUP BY full_name
+ORDER BY 'number of people with this name' DESC ;
