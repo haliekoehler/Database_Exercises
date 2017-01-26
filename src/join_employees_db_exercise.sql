@@ -49,4 +49,6 @@ JOIN departments as d
   ON de.dept_no = d.dept_no
 JOIN dept_manager as dm
   ON e.emp_no = dm.emp_no
+JOIN employees as emp
+  ON dm.emp_no = e.emp_no
 WHERE de.to_date = '9999-01-01';
